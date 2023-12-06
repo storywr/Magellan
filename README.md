@@ -1,3 +1,3 @@
 ## Deployed App
-[Magellan](https://magellan-search-3c458f5930cb.herokuapp.com/)
+[Magellan](https://magellan-explorer-a277bd005eca.herokuapp.com/)
 
