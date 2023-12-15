@@ -1,5 +1,5 @@
 ## Magellan Explorer
-Search app that searches across pixabay (images/videos), giphy (gifs), and Wikipedia (articles). Written in React, React Query, Chakra-UI, Typescript
+Search app that searches across pixabay (images/videos), giphy (gifs), and Wikipedia (articles). Written in React, React Query, Chakra-UI, Typescript. Currently using Localstorage to mock a backend but planning to migrate to NextJS
 
 Project URL: [Magellan](https://magellan-explorer-a277bd005eca.herokuapp.com/)
 
