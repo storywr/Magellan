@@ -9,7 +9,7 @@ interface Props {
 }
 
 const useGifs = ({ search, enabled }: Props) => {
-  return useQuery('gifs', async () => {
+  return useQuery(['gifs', search], async () => {
     const { data } = await axios({
       method: 'GET',
       url: `${api.giphy}&q=${search}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`

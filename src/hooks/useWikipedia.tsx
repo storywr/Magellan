@@ -9,7 +9,7 @@ interface Props {
 }
 
 const useWikipedia = ({ search, enabled }: Props) => {
-  return useQuery('wikipedia', async () => {
+  return useQuery(['wikipedia', search], async () => {
     const { data } = await axios({
       method: 'GET',
       url: `${api.wikipedia}?action=query&format=json&prop=extracts&generator=prefixsearch&redirects=1&converttitles=1&formatversion=2&exintro=1&explaintext=1&gpssearch=${search}&origin=*`

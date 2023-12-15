@@ -9,7 +9,7 @@ interface Props {
 }
 
 const useVideos = ({ search, enabled }: Props) => {
-  return useQuery('videos', async () => {
+  return useQuery(['videos', search], async () => {
     const { data } = await axios({
       method: 'GET',
       url: `${api.pixabay.video}&q=${search}&image_type=photo&per_page=10&min_width=250`

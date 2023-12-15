@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { AddIcon, CloseIcon, SearchIcon } from '@chakra-ui/icons'
 import {
   Alert,
@@ -33,34 +33,23 @@ const AllItems = () => {
     data: images,
     isFetching: isFetchingImages,
     error: errorImages,
-    refetch: refetchImages
-  } = useImages({ search: search.trim(), enabled: isActive(Source.image) })
+  } = useImages({ search: debouncedSearch.trim(), enabled: isActive(Source.image) })
   const {
     data: videos,
     isFetching: isFetchingVideos,
     error: errorVideos,
-    refetch: refetchVideos
-  } = useVideos({ search: search.trim(), enabled: isActive(Source.video) })
+  } = useVideos({ search: debouncedSearch.trim(), enabled: isActive(Source.video) })
   const {
     data: articles,
     isFetching: isFetchingArticles,
     error: errorArticles,
-    refetch: refetchArticles
-  } = useWikipedia({ search: search.trim(), enabled: isActive(Source.wiki) })
+  } = useWikipedia({ search: debouncedSearch.trim(), enabled: isActive(Source.wiki) })
   const {
     data: gifs,
     isFetching: isFetchingGifs,
     error: errorGifs,
-    refetch: refetchGifs
-  } = useGifs({ search: search.trim(), enabled: isActive(Source.gif) })
+  } = useGifs({ search: debouncedSearch.trim(), enabled: isActive(Source.gif) })
   const isError = errorImages || errorVideos || errorGifs || errorArticles
-
-  useEffect(() => {
-    refetchImages()
-    refetchVideos()
-    refetchGifs()
-    refetchArticles()
-  }, [debouncedSearch])
 
   if (isError) return (
     <Box>

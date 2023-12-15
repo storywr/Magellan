@@ -9,7 +9,7 @@ interface Props {
 }
 
 const useImages = ({ search, enabled }: Props) => {
-  return useQuery('images', async () => {
+  return useQuery(['images', search], async () => {
     const { data } = await axios({
       method: 'GET',
       url: `${api.pixabay.image}&q=${search}&image_type=photo&per_page=10&min_width=250`
